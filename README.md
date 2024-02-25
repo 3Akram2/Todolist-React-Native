@@ -35,7 +35,7 @@ Before you begin, make sure you have the following installed on your machine:
         npm start
   or
 
-          npx expo start
+       npx expo start
 
 
 6. choose to running enviroment :
