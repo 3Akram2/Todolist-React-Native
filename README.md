@@ -17,13 +17,30 @@ Before you begin, make sure you have the following installed on your machine:
    ```bash
    git clone https://github.com/3Akram2/Todolist-React-Native.git
 
-Navigate to the project directory:
-  
-  cd Todolist-React-Native
+2. Navigate to the project directory:
+   ```bash
+   cd Todolist-React-Native
 
-Create a .env file in the root of the project and add the following environment variable:
+3. Create a .env file in the root of the project and add the following environment variable:
+   ```bash
+      touch .env
  BASE_URL=http://your-ip-address:your-port 
-to install the dependencies use:
- run npm install 
-to run the application use:
- npm start or npx expo start 
+ 
+4. install the dependencies use:
+   ```bash
+      npm install
+
+5. start the application :
+    ```bash
+        npm start
+  or
+
+          npx expo start
+
+
+6. choose to running enviroment :
+   
+     i: for ios simulator
+     a: for andriod
+   or install expo app for your platform and scan QR code
+             
