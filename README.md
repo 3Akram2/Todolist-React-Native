@@ -40,7 +40,7 @@ Before you begin, make sure you have the following installed on your machine:
 
 6. choose to running enviroment :
    
-     i: for ios simulator
-     a: for andriod
-   or install expo app for your platform and scan QR code
+    - i: for ios simulator
+    - a: for andriod
+   - or install expo app for your platform and scan QR code
              
