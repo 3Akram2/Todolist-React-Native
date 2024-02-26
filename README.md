@@ -20,17 +20,12 @@ Before you begin, make sure you have the following installed on your machine:
 2. Navigate to the project directory:
    ```bash
    cd Todolist-React-Native
-
-3. Create a .env file in the root of the project and add the following environment variable:
-   ```bash
-      touch .env
- BASE_URL=http://your-ip-address:your-port 
  
-4. install the dependencies use:
+3. install the dependencies use:
    ```bash
       npm install
 
-5. start the application :
+4. start the application :
     ```bash
         npm start
   or
@@ -38,7 +33,7 @@ Before you begin, make sure you have the following installed on your machine:
        npx expo start
 
 
-6. choose to running enviroment :
+5. choose to running enviroment :
    
     - i: for ios simulator
     - a: for andriod
