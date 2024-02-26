@@ -1,8 +1,7 @@
 import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { Card, IconButton, MD3Colors } from 'react-native-paper';
-import { deleteTask } from '../axios/requests';
-import AsyncStorage from '@react-native-async-storage/async-storage';
+
 
 
 interface TaskProps {
@@ -51,15 +50,13 @@ const styles = StyleSheet.create({
   },
   titleContainer: {
     flex: 1,
-    justifyContent: 'center',
-    
+    justifyContent: 'center', 
   },
   titleText: {
     flexWrap: 'wrap',
     fontSize: 16,
     fontWeight: '600',
-    paddingTop:6,
-    
+    paddingTop:6,   
   },
   square: {
     width: 24,

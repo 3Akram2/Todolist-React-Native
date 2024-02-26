@@ -21,22 +21,15 @@ const RigsterScreen = () => {
     const [confPassError,setConfPassError] =  useState<boolean>(false);
     const [isLoading,setLoading] =  useState<boolean>(false);
   
-
     const handleShowPassord = () =>{
         setShowPassword(!showPassword)
     }
-    
     const validateEmail = () => {
-        
-        
         const emailRegex = /\S+@\S+\.\S+/;
         setEmailError(!emailRegex.test(email)) ;
-        
       };
     const validatePassword = () => {
-        
         if(password.length >= 6){
-            
             setPassError(false);
             return
         }
@@ -44,15 +37,12 @@ const RigsterScreen = () => {
     }
     const validateConfirmPassword = ()=>{
         if(password === confirmPassword){
-            console.log(password,confirmPassword)
             setConfPassError(false);
              return
         }
-        
         setConfPassError(true);
     }
     const  goLogin = ()=>{
-        console.log("go Login")
         navigation.navigate('Login');
     }
     const handleRegister = async () =>{
@@ -70,10 +60,17 @@ const RigsterScreen = () => {
        if(response.data.msg === 'user already exists'){
         goLogin();
        }
-    } catch (error) {
-       console.log(error) 
+    } catch (error:any) {
+        if (error.response) {
+            const status = error.response.status;
+            if (status === 401) {
+              alert('User already exists');
+            } else {
+              console.error('Login error:', error);
+              alert('An error occurred while registering');
+            }
+        }
     }
-       
     } 
   return (
     isLoading?<Loading/>:
@@ -81,7 +78,6 @@ const RigsterScreen = () => {
    style={styles.container}
    behavior={Platform.OS === 'ios'?'padding':'height'}
    >
-    
     <View>
      <TextInput  
      mode="outlined"
@@ -156,8 +152,6 @@ const styles = StyleSheet.create({
         color:'#55BCF6',
         fontSize:14,
         fontWeight:"bold",
-        textDecorationLine:'underline',
-        
+        textDecorationLine:'underline',      
     }
-
 })

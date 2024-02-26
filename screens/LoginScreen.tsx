@@ -18,21 +18,15 @@ const LoginScreen = () => {
     const [showPassword,setShowPassword] = useState<boolean>(false);
     const [emailError,setEmailError] =  useState<boolean>(false);
     
-
-
     const handleShowPassord = () =>{
         setShowPassword(!showPassword)
     }
     const validateEmail = () => {
         // email validation using regex
-        
         const emailRegex = /\S+@\S+\.\S+/;
         setEmailError(!emailRegex.test(email)) ;
-        
       };
-    
     const  goRigster = ()=>{
-        console.log("go register")
         navigation.navigate('Register');
     }
     const handleLogin =async () => {
@@ -48,20 +42,11 @@ const LoginScreen = () => {
         try {
             const response = await login(email.toLowerCase(),password);
             if (response.status === 200) {
-                
                 const token = response.data.token;
-                
                 await AsyncStorage.setItem("token",token);
-                
                 navigation.navigate('Home');
                 setEmail('')
                 setPassword('')
-                
-              } else if(response.status === 404) {
-                alert(response.data.msg);
-              }
-              else if(response.status === 401) {
-                alert(response.data.msg);
               }
             } catch (error:any) {
                 if (error.response) {
@@ -142,11 +127,9 @@ const styles = StyleSheet.create({
         fontSize:14,
         fontWeight:"bold",
         textDecorationLine:'underline',
-        
     },
     inputError:{
         fontSize:10,
         color:"red",
     },
-
 })

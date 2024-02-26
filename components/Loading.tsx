@@ -1,10 +1,6 @@
 import { StyleSheet } from 'react-native'
 import React from 'react'
-import { Modal, Portal, Text, Button, PaperProvider,ActivityIndicator } from 'react-native-paper';
-
-
-
-  
+import { Modal, Portal, PaperProvider, ActivityIndicator } from 'react-native-paper';
 
 const Loading = () => {
     const [visible, setVisible] = React.useState(true);
